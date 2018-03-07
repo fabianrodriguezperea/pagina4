@@ -30,10 +30,13 @@
 			<td>{{$libro->Autor}}	</td>
 			<td>{{$libro->Editorial}}	</td>
 			<td>
-				<form action="{{route('borrarcliente',['id'=>$libro->id])}}" method="post">
-					{{csrf_field()}}
-					<button class ="btn">Eliminar</button>
-				</form>
+
+				<a href="{{ route('borrarcliente',['id'=>$libro->id])}}" onclick="
+return confirm('Estas seguro de eliminar este registro?')"
+    class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"
+        aria-hidden="true"> Eliminar</span></a>
+
+
 			   <form action="{{route('editarlibro',['id'=>$libro->id])}}" method="post">
 					{{csrf_field()}}
 					<button class ="btn">Actualisar</button>

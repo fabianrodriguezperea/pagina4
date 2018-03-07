@@ -23,7 +23,7 @@ Route::get('/usa', 'UsuariosController@usa');
 
 Route::post('/Libros/guardar','LibrosController@store')->name('guardarlibro');
 Route::post('/libros/listar','LibrosController@listar')->name('listarlibro');
-Route::post('/libros/eliminar/{id}','LibrosController@destroy')->name('borrarcliente');
+Route::get('/libros/eliminar/{id}','LibrosController@destroy')->name('borrarcliente');
 Route::post('/libros/editar{id}','LibrosController@show')->name('editarlibro');
 Route::post('/libros/actualizarlibro{id}','LibrosController@update')->name('actualizarlibro');
 
