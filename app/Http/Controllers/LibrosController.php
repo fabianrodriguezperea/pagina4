@@ -20,12 +20,12 @@ class LibrosController extends Controller
    	$libros->Autor =$request->autor;
    	$libros->Editorial =$request->editorial;
  
-   	if($libros->save());{
+   	if($libros->save()) {
 
-    return back()->wiht('msj','Datos guardados');
-}else{
-  return back();
-}
+    return back()->with('msj','Datos guardados');
+     }else   {
+      return back();
+      }
 
 
    	return view ('libros.index');

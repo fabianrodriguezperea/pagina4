@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if(session()->has('msj'))
+<div class ="alert alert-success" role="alert">{{session('msj')}}</div>
+@else
+<div class="alert alert-danger" role ="form">Error al guardar los datos </div>
+@endif
 <html>
 <head>
 	<title>Proyecto4</title>
