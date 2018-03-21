@@ -27,6 +27,8 @@ Route::get('/libros/eliminar/{id}','LibrosController@destroy')->name('borrarclie
 Route::post('/libros/editar{id}','LibrosController@show')->name('editarlibro');
 Route::post('/libros/actualizarlibro{id}','LibrosController@update')->name('actualizarlibro');
 
+Route::get('alert/AlertType','sweetalertController@alert')->name('alert');
+
 
 Auth::routes();
 

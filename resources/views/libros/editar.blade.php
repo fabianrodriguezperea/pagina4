@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-
+<form class="form-horizontal" method="POST" action="{{ route('login') }}">
+    {{csrf_field()}}
+<button class ="btn">Nuevo</button>
+    </form>
 <form class="form-control" action="{{ route('actualizarlibro', $libro->id) }}" method="post">
     {{ csrf_field() }}
-    
+    @include('libros.error')
     <label>Nombre del libro</label>
     <input type="text" name="nombre" class="form-control" value="{{$libro->Nombre}}">
 

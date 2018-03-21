@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Libros;
+use App\Http\Requests\LibrosRequest;
 class LibrosController extends Controller
 {
    public function index()
@@ -11,20 +12,24 @@ class LibrosController extends Controller
    	return view ('libros.index');
    }
 
-    public function store(Request $request)
+    public function store(LibrosRequest $request)
    {
   
-   	$libros= new Libros;
+  	$libros= new Libros;
 
    	$libros->Nombre =$request->nombre;
-   	$libros->Autor =$request->autor;
-   	$libros->Editorial =$request->editorial;
+  	$libros->Autor =$request->autor;
+    $libros->Editorial =$request->editorial;
  
    	if($libros->save()) {
 
     return back()->with('msj','Datos guardados');
      }else   {
+<<<<<<< Updated upstream
       return back();
+=======
+      return back('msj','error al guardar los datos');
+>>>>>>> Stashed changes
       }
 
 
@@ -53,7 +58,7 @@ class LibrosController extends Controller
 	 return view('libros.editar')
     ->with('libro',$libro);
 	}
-	public function update (Request $request, $id)
+	public function update (LibrosRequest $request, $id)
 	{
 		$libro = Libros::find($id);
 		$libro->Nombre = $request->nombre;
